@@ -1,0 +1,24 @@
+{
+  "name": "codespaces-blank",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "start": "webpack serve --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@webpack-cli/serve": "^2.0.4",
+    "webpack": "latest",
+    "webpack-cli": "latest",
+    "webpack-dev-server": "^4.15.0"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "^5.5.1",
+    "lodash": "^4.17.21"
+  }
+}
