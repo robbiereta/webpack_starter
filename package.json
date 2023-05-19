@@ -7,7 +7,7 @@
     "build": "webpack",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
-    "mail":"node src/mailer.js"
+    "mail": "node src/mailer.js"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
@@ -15,6 +15,7 @@
     "@webpack-cli/serve": "^2.0.4",
     "babel-loader": "^9.1.2",
     "esbuild-loader": "^3.0.1",
+    "netlify-cli": "^15.1.1",
     "webpack": "latest",
     "webpack-cli": "latest",
     "webpack-dev-server": "^4.15.0"
