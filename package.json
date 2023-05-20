@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack",
+    "cons": "webpack",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
     "mail": "node src/mailer.js"
