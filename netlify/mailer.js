@@ -1,6 +1,16 @@
 exports.handler = async function (event, context) {
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ message: "Hello World" }),
-  };
+  const express = require('express')
+  const app = express()
+  const port = 3000
+  
+  var mailerRouter = require("./routes/mailer");
+  
+  app.use('/mailer',mailerRouter)
+  
+  app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+  })
+  return serverless(app)(event, context);
 };
+
+
