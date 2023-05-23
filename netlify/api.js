@@ -3,7 +3,7 @@ exports.handler = async function (event, context) {
   const app = express()
   const port = 3000
   
-  var mailerRouter = require("./routes/mailer");
+  var mailerRouter = require("../src/routes/mailer");
   
   app.use('/mailer',mailerRouter)
   
