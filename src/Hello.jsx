@@ -1,11 +1,44 @@
 import React from 'react'
+import { useState } from 'react';
 import { useForm } from "react-hook-form";
 import Select from 'react-select'
 import { grupo,prods,anios } from "./opciones";
 function Hello() {
- 
+    const [moto, setMoto] = useState();
+    const [prod, setProd] = useState();
+    const [anio, setAnio] = useState();
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+  function onSubmit(data)
+ {
+  const axios = require('axios');
+  let data2 = {
+    moto:moto,
+    prod:prod,
+    anio:anio,
+    color:data.color,
+    nombre:data.nombre,
+    telefono:data.telefono,    
+  };
+  
+  let config = {
+    method: 'post',
+    maxBodyLength: Infinity,
+    url: 'https://magenta-gelato-edb500.netlify.app/.netlify/functions/serverlessHttp/mailer',
+    headers: { },
+    data : data2
+  };
+  
+  axios.request(config)
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+  
+
+ } 
+
 
   return (
     /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
@@ -18,23 +51,23 @@ function Hello() {
     
     </div>
   
-    <hr />
+    <hr class="my-5" />
     <h4>Selecciona un producto:</h4>
     <Select
       options={prods}
-      onChange={data => console.log(data)}
+      onChange={e => setProd(e.value)}
       placeholder="Selecciona un producto"
       name="producto" />
     <h4>Selecciona una moto:</h4>
     <Select
       options={grupo}
-      onChange={data => console.log(data)}
+      onChange={e => setMoto(e.label)}
       placeholder="Selecciona una moto"
       name="moto"></Select>
       <h4>Selecciona el año:</h4>
       <Select
         options={anios}
-        onChange={data => console.log(data)}
+        onChange={e => setAnio(e.value)}
         placeholder="Selecciona el año"
         name="anio"></Select>
 
