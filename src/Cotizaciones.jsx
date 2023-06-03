@@ -10,6 +10,7 @@ function Cotizaciones() {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   function onSubmit(data)
  {
+  alert("Muchas gracias por su preferencia. Nos pondremos en contacto con usted");
   const axios = require('axios');
   let data2 = {
     moto:moto,
