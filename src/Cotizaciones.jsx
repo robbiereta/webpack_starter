@@ -24,7 +24,7 @@ function Cotizaciones() {
   let config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'https://magenta-gelato-edb500.netlify.app/.netlify/functions/serverlessHttp/mailer',
+    url: 'https://express-low5.onrender.com/mailer',
     headers: { },
     data : data2
   };
