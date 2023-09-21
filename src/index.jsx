@@ -1,3 +1,3 @@
 import { render } from "react-dom";
-import Cotizaciones from "./Cotizaciones.jsx";
-render(<Cotizaciones/>,document.getElementById('root'))
+import Precios from "./Precios.jsx";
+render(<Precios/>,document.getElementById('root'))
